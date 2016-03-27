@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="com.FManSSC.model.backbones">
 	<class name="Address" table="custAddress">
-		<id name="caddress_id" column="caddress_id"/>
+		<id name="id" column="caddress_id"/>
 		<property name="street" type="string" column="street"/>
 		<property name="streetNo" type="string" column="streetNo"/>	
 		<property name="city" type="string" column="city"/>

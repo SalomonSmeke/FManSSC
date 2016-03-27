@@ -47,7 +47,7 @@ public class Main extends HttpServlet {
 		cust.setLast("Smeke");
 		cust.setBody("8135023882");
 		cust.setEmail("ssmeke@luc.edu");
-		cust.setAddress(address);
+		cust.setCustAddress(address);
 		boolean v = cust.verify();
 		out.println("Customer Salomon was verified with result: " + v);
 		CustomerHibernateDAO custDAO = new CustomerHibernateDAO();

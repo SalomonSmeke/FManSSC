@@ -4,7 +4,7 @@ import com.FManSSC.model.backbones.Address;
 
 public interface _Customer {
 
-	public Address getAddress();
-	public void setAddress(Address address);
+	public Address getCustAddress();
+	public void setCustAddress(Address custAddress);
 
 }

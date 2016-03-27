@@ -7,11 +7,11 @@ public class Customer extends Person implements _Customer {
 
 	private Address custAddress;
 
-	public Address getAddress() {
+	public Address getCustAddress() {
 		return custAddress;
 	}
-	public void setAddress(Address address) {
-		this.custAddress = address;
+	public void setCustAddress(Address custAddress) {
+		this.custAddress = custAddress;
 	}
 
 	@Override

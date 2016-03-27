@@ -53,6 +53,9 @@ public class Main extends HttpServlet {
 		out.println("Customer Salomon was verified with result: " + v);
 		CustomerHibernateDAO custDAO = new CustomerHibernateDAO();
 		custDAO.addCustomer(cust);
-		out.println("Not implemented");
+		Customer retrieved = custDAO.retrieveCustomer(1);
+		custDAO.deleteCustomer(retrieved);
+		
+		out.println("looks good jim!");
 	}
 }

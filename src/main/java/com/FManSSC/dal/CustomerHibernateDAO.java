@@ -25,16 +25,16 @@ public class CustomerHibernateDAO {
 		session.getTransaction().commit();
 	}
 
-	public Customer retrieveCustomer(String id) {
+	public Customer retrieveCustomer(long i) {
 		try {
-			System.out.println("*************** Searcing for customer information with ID ...  " + id);
+			System.out.println("*************** Searcing for customer information with ID ...  " + i);
 			Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 
 			//System.out.println("*************** Hibernate session is created ..................\n" + session.toString());
 
 			org.hibernate.Query getCustQuery = session.createQuery("From Customer where id=:id");		
-			getCustQuery.setString("id", id);
+			getCustQuery.setLong("id", i);
 
 			System.out.println("*************** Retrieve Query is ....>>\n" + getCustQuery.toString()); 
 
@@ -49,14 +49,14 @@ public class CustomerHibernateDAO {
 		return null;
 	}
 
-	public Address retrieveCustomerAddress(String id) {
+	public Address retrieveCustomerAddress(long id) {
 		try {
 			System.out.println("*************** Searcing for customer address information with ID ...  " + id);
 			Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 
 			Query getAddressQuery = session.createQuery("From custAddress where caddress_id=:id");		
-			getAddressQuery.setString("id", id);
+			getAddressQuery.setLong("id", id);
 
 			System.out.println("*************** Retrieve Query is ....>>\n" + getAddressQuery.toString()); 
 

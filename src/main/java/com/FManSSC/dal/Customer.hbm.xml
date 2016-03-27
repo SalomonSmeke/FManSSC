@@ -5,12 +5,12 @@
  
 <hibernate-mapping package="com.FManSSC.model.customer">
 	<class name="Customer" table="customer">
-		<id name="id" column="customerid"/>
-		<property name="last" type="string" column="lname"/>
-		<property name="first" type="string" column="fname"/>
-		<property name="body" type="string" column="phone"/>
-		<property name="extension" type="string" column="extension"/>
-		<property name="email" type="string" column="email"/>
+		<id name="id" column="id"/>
+		<property name="last" type="string" column="lname" not-null="true"/>
+		<property name="first" type="string" column="fname" not-null="true"/>
+		<property name="body" type="string" column="phone" not-null="true"/>
+		<property name="extension" type="string" column="extension" not-null="true"/>
+		<property name="email" type="string" column="email" not-null="true"/>
 		<one-to-one name="custAddress" class="import com.FManSSC.model.backbones.Address" cascade="save-update, delete"></one-to-one>	
 	</class>
 </hibernate-mapping>

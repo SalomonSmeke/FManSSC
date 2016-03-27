@@ -25,8 +25,8 @@
  		<property name="hibernate.hbm2ddl.auto">create-drop</property>
  		
 		<!-- Mapping resource configuration files -->
- 		<mapping resource="com/online/bookstore/dao/Customer.hbm.xml"/> 
- 		<mapping resource="com/online/bookstore/dao/Address.hbm.xml"/> 	
+ 		<mapping resource="com/FManSSC/dal/Customer.hbm.xml"/> 
+ 		<mapping resource="com/FManSSC/dal/CustAddress.hbm.xml"/> 	
  			 
  	</session-factory>
  </hibernate-configuration>

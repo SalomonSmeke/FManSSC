@@ -10,6 +10,7 @@ public abstract class Address implements _Verifiable{
 	private String street = "";
 	private String zip = "";
 	private String city = "";
+	private String state = "";
 
 	public Address(){
 
@@ -51,6 +52,14 @@ public abstract class Address implements _Verifiable{
 	public void setCity(String city) {
 		this.city = city;
 	}
+	
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 
 	@Override
 	public boolean verify(){
@@ -59,7 +68,7 @@ public abstract class Address implements _Verifiable{
 		if (street.length()==0) return false;
 		if (zip.length()!=5) return false;
 		if (city.length()==0) return false;
+		if (state.length()==0) return false;
 		return true;
 	}
-
 }

@@ -46,6 +46,7 @@ public class Main extends HttpServlet {
 		cust.setFirst("Salomon");
 		cust.setLast("Smeke");
 		cust.setBody("8135023882");
+		cust.setExtension("1");
 		cust.setEmail("ssmeke@luc.edu");
 		cust.setCustAddress(address);
 		boolean v = cust.verify();

@@ -8,7 +8,7 @@ public class Phone implements _Verifiable {
 	private String extension = "";
 
 	public Phone(){
-
+		extension = "";
 	}
 
 	public String getBody() {

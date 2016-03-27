@@ -3,6 +3,7 @@ package com.FManSSC.dataHelpers;
 abstract public class Numerical {
 
 	public static boolean isNumerical(String in) {
+		if (in == null) return false;
 		int len = in.length();
 		for (int i = 0; i < len; i++){
 			char temp = in.charAt(i);

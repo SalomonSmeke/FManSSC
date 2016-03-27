@@ -11,7 +11,7 @@ public class HibernatePGSQLHelper {
 	static {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml
-			Configuration config = new Configuration().configure("hibernate.cfg.xml");
+			Configuration config = new Configuration().configure();
 			URI database = new URI(System.getenv("DATABASE_URL"));
 			String [] user = database.getUserInfo().split(":");
 			String builtUrl = "jdbc:postgresql://" + database.getHost() + ":" + database.getPort() + database.getPath();

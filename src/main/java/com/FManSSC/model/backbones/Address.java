@@ -1,6 +1,6 @@
 package com.FManSSC.model.backbones;
 
-public abstract class Address implements _Verifiable{
+public class Address implements _Verifiable{
 
 	private long id;
 	private boolean idSet = false;

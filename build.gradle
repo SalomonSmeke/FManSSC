@@ -1,0 +1,33 @@
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "Library"
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "io.ratpack:ratpack-gradle:1.0.0"
+  }
+}
+
+apply plugin: "io.ratpack.ratpack-groovy"
+
+repositories {
+  jcenter()
+}
+
+mainClassName = "Main"
+
+dependencies {
+  runtime "org.slf4j:slf4j-simple:1.7.12"
+  compile "com.heroku.sdk:heroku-jdbc:0.1.1"
+  compile "org.postgresql:postgresql:9.4-1201-jdbc4"
+  compile "org.hibernate:hibernate-core:5.1.0.Final"
+  testCompile "junit:junit:4.12"
+}
+
+task stage {
+  dependsOn installDist
+}

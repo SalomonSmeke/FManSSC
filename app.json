@@ -1,0 +1,6 @@
+{
+  "name": "Facility Management System",
+  "description": "A Heroku Hosted Take on COMP 473's assignment",
+  "image": "heroku/gradle",
+  "addons": [ "heroku-postgresql" ]
+}

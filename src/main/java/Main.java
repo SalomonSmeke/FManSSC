@@ -47,7 +47,8 @@ public class Main extends HttpServlet {
 		cust.setAddress(address);
 		boolean v = cust.verify();
 		out.println("Customer Salomon was verified with result: " + v);
-		CustomerHibernateDAO.addCustomer(cust);
+		CustomerHibernateDAO custDAO = new CustomerHibernateDAO();
+		custDAO.addCustomer(cust);
 		out.println("Not implemented");
 	}
 }

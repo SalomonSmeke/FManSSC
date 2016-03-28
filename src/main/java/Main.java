@@ -7,8 +7,9 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 import com.FManSSC.dal.*;
-import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.customer.Customer;
+
+import Fixtures.Customers;
 
 @SuppressWarnings("serial")
 public class Main extends HttpServlet {
@@ -34,21 +35,7 @@ public class Main extends HttpServlet {
 	}
 	
 	protected void demo(PrintWriter out){
-		Address address = new Address();
-		address.setId(1);
-		address.setStreetNo(0);
-		address.setStreet("W. Granville");
-		address.setZip("60660");
-		address.setCity("Chicago");
-		address.setState("Illinois");
-		Customer cust = new Customer();
-		cust.setId(1);
-		cust.setFirst("Salomon");
-		cust.setLast("Smeke");
-		cust.setBody("8135023882");
-		cust.setExtension("1");
-		cust.setEmail("ssmeke@luc.edu");
-		cust.setCustAddress(address);
+		Customer cust = Customers.cust0;
 		boolean v = cust.verify();
 		out.println("Customer Salomon was verified with result: " + v);
 		CustomerHibernateDAO custDAO = new CustomerHibernateDAO();

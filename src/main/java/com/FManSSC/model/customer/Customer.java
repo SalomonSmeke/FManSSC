@@ -7,6 +7,15 @@ public class Customer extends Person implements _Customer {
 
 	private Address custAddress;
 
+	public Customer(){
+		
+	}
+	
+	public Customer(long id, String first, String last, String body, String extension, String email, Address custAddress){
+		super(id, first, last, body, extension, email);
+		this.custAddress = custAddress;
+	}
+	
 	public Address getCustAddress() {
 		return custAddress;
 	}

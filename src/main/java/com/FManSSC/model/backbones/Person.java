@@ -18,6 +18,16 @@ public abstract class Person implements _Verifiable {
 	public Person(){
 
 	}
+	
+	public Person(long id, String first, String last, String body, String extension, String email){
+		this.id = id;
+		this.idSet = true;
+		this.first = first;
+		this.last = last;
+		this.body = body;
+		this.extension = extension;
+		this.email = email;
+	}
 
 	public long getId() {
 		return id;

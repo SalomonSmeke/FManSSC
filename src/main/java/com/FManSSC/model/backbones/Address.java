@@ -15,6 +15,17 @@ public class Address implements _Verifiable{
 	public Address(){
 
 	}
+	
+	public Address(long id, int streetNo, String street, String zip, String city, String state){
+		this.id = id;
+		this.idSet = true;
+		this.streetNo = streetNo;
+		this.streetNoSet = true;
+		this.street = street;
+		this.zip = zip;
+		this.city = city;
+		this.state = state;
+	}
 
 	public long getId() {
 		return id;

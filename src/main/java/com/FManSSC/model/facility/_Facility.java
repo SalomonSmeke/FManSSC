@@ -2,13 +2,14 @@ package com.FManSSC.model.facility;
 
 import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.backbones._Verifiable;
+import com.FManSSC.model.owner.Owner;
 
 public interface _Facility extends _Verifiable {
 
 	public long getId();
 	public void setId(long id);
-	public long getOwnerId();
-	public void setOwnerId(long ownerId);
+	public Owner getOwner();
+	public void setOwner(Owner owner);
 	public Address getAddress();
 	public void setAddress(Address address);
 	public String getBody();

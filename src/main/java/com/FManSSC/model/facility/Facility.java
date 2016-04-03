@@ -2,13 +2,13 @@ package com.FManSSC.model.facility;
 
 import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.backbones.Phone;
+import com.FManSSC.model.owner.Owner;
 
 public class Facility implements _Facility {
 
 	private long id;
 	private boolean idSet = false;
-	private long ownerId;
-	private boolean ownerIdSet = false;
+	private Owner owner;
 
 	private Address address;
 
@@ -25,12 +25,11 @@ public class Facility implements _Facility {
 		this.id = id;
 		idSet = true;
 	}
-	public long getOwnerId() {
-		return ownerId;
+	public Owner getOwner() {
+		return owner;
 	}
-	public void setOwnerId(long ownerId) {
-		this.ownerId = ownerId;
-		ownerIdSet = true;
+	public void setOwner(Owner owner) {
+		this.owner = owner;
 	}
 	public Address getAddress() {
 		return address;
@@ -69,7 +68,7 @@ public class Facility implements _Facility {
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;
-		if (!ownerIdSet) return false;
+		if (!owner.verify()) return false;
 		if (!address.verify()) return false;
 		Phone tempPhone = new Phone();
 		tempPhone.setBody(body);

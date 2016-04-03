@@ -3,14 +3,15 @@
 "-//Hibernate/Hibernate Mapping DTD 5.1//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
 
-<hibernate-mapping package="com.FManSSC.model.facility">
-	<class name="Facility" table="facility">
+<hibernate-mapping package="com.FManSSC.model.room">
+	<class name="Room" table="room">
 		<id name="id" column="id"/>
-		<many-to-one name="ownerId" column="ownerId" not-null="true" cascade="save-update, delete"/>
-		<property name="body" type="string" column="phone" not-null="true"/>
-		<property name="extension" type="string" column="extension" not-null="true"/>
+		<many-to-one name="facilityId" column="facilityid" not-null="true" cascade="save-update, delete"/>
+		<property name="capacity" type="int" column="capacity" not-null="true"/>
+		<property name="costPerHr" type="double" column="cph" not-null="true"/>
+		<property name="number" type="string" column="number" not-null="true"/>
+		<property name="location" type="string" column="location" not-null="true"/>
 		<property name="description" type="string" column="description" not-null="true"/>
 		<property name="active" type="boolean" column="active" not-null="true"/>
-		<one-to-one name="address" class="com.FManSSC.model.facility.Address" cascade="save-update, delete"></one-to-one>	
 	</class>
 </hibernate-mapping>

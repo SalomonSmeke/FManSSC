@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Mapping DTD 5.1//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
  
-<hibernate-mapping package="com.FManSSC.model.reservations">
+<hibernate-mapping package="com.FManSSC.model.reservation">
 	<class name="Reservation" table="reservation">
 		<id name="id" column="id"/>
 		<many-to-one name="roomId" class="com.FManSSC.model.room.Room" cascade="save-update, delete"></many-to-one>	

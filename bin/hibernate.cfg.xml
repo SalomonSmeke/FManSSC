@@ -29,7 +29,8 @@
  		<mapping resource="mappings/Customer.hbm.xml"/> 
  		<mapping resource="mappings/Facility.hbm.xml"/>
  		<mapping resource="mappings/Owner.hbm.xml"/>  
- 			
- 			 
+ 		<mapping resource="mappings/Reservation.hbm.xml"/>  
+ 		<mapping resource="mappings/Room.hbm.xml"/>   			
+  		<mapping resource="mappings/Ticket.hbm.xml"/>  			 
  	</session-factory>
  </hibernate-configuration>

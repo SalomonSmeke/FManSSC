@@ -10,9 +10,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.FManSSC.dal.*;
 import com.FManSSC.model.backbones.Address;
+import com.FManSSC.model.backbones.Phone;
+import com.FManSSC.model.backbones.Time;
 import com.FManSSC.model.backbones._Synopsis;
 import com.FManSSC.model.backbones._Verifiable;
 import com.FManSSC.model.customer.Customer;
+import com.FManSSC.model.facility.Facility;
+import com.FManSSC.model.owner.Owner;
+import com.FManSSC.model.reservation.Reservation;
+import com.FManSSC.model.room.Room;
+import com.FManSSC.model.ticket.Ticket;
 
 import Fixtures.Addresses;
 import Fixtures.Customers;
@@ -110,25 +117,25 @@ public class Main extends HttpServlet {
 		out.println(objectVerification(PREFIX,(Customer)context.getBean("customerFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Facility Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("facilityFixture")));
+		out.println(objectVerification(PREFIX,(Facility)context.getBean("facilityFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Owner Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("ownerFixture")));
+		out.println(objectVerification(PREFIX,(Owner)context.getBean("ownerFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Phone Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("phoneFixture")));
+		out.println(objectVerification(PREFIX,(Phone)context.getBean("phoneFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Reservation Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("reservationFixture")));
+		out.println(objectVerification(PREFIX,(Reservation)context.getBean("reservationFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Room Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("roomFixture")));
+		out.println(objectVerification(PREFIX,(Room)context.getBean("roomFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Ticket Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("ticketFixture")));
+		out.println(objectVerification(PREFIX,(Ticket)context.getBean("ticketFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Time Verification");
-		out.println(objectVerification(PREFIX,(Customer)context.getBean("timePastFixture")));
+		out.println(objectVerification(PREFIX,(Time)context.getBean("timePastFixture")));
 		out.println();
 	}
 	

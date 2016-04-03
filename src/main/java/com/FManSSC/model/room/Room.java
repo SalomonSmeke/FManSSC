@@ -20,6 +20,24 @@ public class Room implements _Room, _Verifiable, _Synopsis {
 
 	private boolean active = true;
 
+	public Room(){
+		
+	}
+	
+	public Room(long id, Facility facility, int capacity, double costPerHr, String number, String location, String description,boolean active){
+		this.id=id;
+		this.idSet=true;
+		this.facility=facility;
+		this.capacity=capacity;
+		this.capacitySet=true;
+		this.costPerHr=costPerHr;
+		this.costPerHrSet=true;
+		this.number=number;
+		this.location=location;
+		this.description=description;
+		this.active=active;
+	}
+	
 	public long getId() {
 		return id;
 	}

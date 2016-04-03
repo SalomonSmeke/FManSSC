@@ -31,6 +31,31 @@ public class Reservation implements _Reservation, _Verifiable, _Synopsis {
 
 	private boolean cancelled = false;
 
+	public Reservation(){
+		
+	}
+	
+	public Reservation(long id, Room room, Customer customer, short yearSt, byte monthSt, byte daySt, byte hourSt, byte minuteSt, byte secondSt,short yearEn, byte monthEn, byte dayEn, byte hourEn, byte minuteEn, byte secondEn, String description, Boolean cancelled){
+		this.id=id;
+		this.idSet=true;
+		this.room=room;
+		this.customer=customer;
+		this.yearSt=yearSt;
+		this.monthSt=monthSt;
+		this.daySt=daySt;
+		this.hourSt=hourSt;
+		this.minuteSt=minuteSt;
+		this.secondSt=secondSt;
+		this.yearEn=yearEn;
+		this.monthEn=monthEn;
+		this.dayEn=dayEn;
+		this.hourEn=hourEn;
+		this.minuteEn=minuteEn;
+		this.secondEn=secondEn;
+		this.description=description;
+		this.cancelled=cancelled;
+	}
+	
 	public long getId() {
 		return id;
 	}

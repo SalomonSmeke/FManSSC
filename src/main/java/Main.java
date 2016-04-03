@@ -101,7 +101,38 @@ public class Main extends HttpServlet {
 		out.println();
 	}
 	
-	protected void demoBeans(PrintWriter out, String string, ApplicationContext context){
+	protected void demoBeans(PrintWriter out, String PREFIX, ApplicationContext context){
+		
+		out.println(PREFIX + "Bean Address Verification");
+		out.println(objectVerification(PREFIX,(Address)context.getBean("addressFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Customer Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("customerFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Facility Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("facilityFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Owner Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("ownerFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Phone Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("phoneFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Reservation Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("reservationFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Room Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("roomFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Ticket Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("ticketFixture")));
+		out.println();
+		out.println(PREFIX + "Bean Time Verification");
+		out.println(objectVerification(PREFIX,(Customer)context.getBean("timePastFixture")));
+		out.println();
+	}
+	
+	protected void demoDB(PrintWriter out, String string, ApplicationContext context){
 		Customer cust = Customers.cust0;
 		cust.setAddress((Address)context.getBean("addressFixture"));
 		boolean v = cust.verify();
@@ -112,10 +143,6 @@ public class Main extends HttpServlet {
 		custDAO.deleteCustomer(retrieved);
 		out.println(cust.synopsis());
 		out.println("looks good jim!");
-	}
-	
-	protected void demoDB(PrintWriter out, String string, ApplicationContext context){
-		
 	}
 	
 	protected String objectSynopsis(String PREFIX, _Synopsis obj){

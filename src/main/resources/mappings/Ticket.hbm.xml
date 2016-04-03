@@ -7,7 +7,7 @@
 	<class name="Ticket" table="ticket">
 		<id name="id" column="id"/>
 		<many-to-one name="roomId" column="roomid" class="com.FManSSC.model.room.Room" cascade="save-update, delete"></many-to-one>	
-		<many-to-one name="customerId" column="roomid" class="com.FManSSC.model.customer.Customer" cascade="save-update, delete"></many-to-one>	
+		<many-to-one name="customerId" column="customerid" class="com.FManSSC.model.customer.Customer" cascade="save-update, delete"></many-to-one>	
 		<property name="yearOp" type="short" column="yearop" not-null="true"/>
 		<property name="monthOp" type="byte" column="monthop" not-null="true"/>
 		<property name="dayOp" type="byte" column="dayop" not-null="true"/>

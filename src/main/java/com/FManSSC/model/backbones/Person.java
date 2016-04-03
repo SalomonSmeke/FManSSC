@@ -2,7 +2,7 @@ package com.FManSSC.model.backbones;
 
 import com.FManSSC.dataHelpers.Skeletal;
 
-public abstract class Person implements _Verifiable {
+public abstract class Person implements _Verifiable, _Synopsis {
 
 	private long id;
 	private boolean idSet;
@@ -73,6 +73,14 @@ public abstract class Person implements _Verifiable {
 		this.active = active;
 	}
 
+	public String synopsis(){
+		if (verify()){
+			return (last + ", " + first + ": " + body + ". Active?: " + active);
+		} else {
+			return "Object Incomplete";
+		}
+	}
+	
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

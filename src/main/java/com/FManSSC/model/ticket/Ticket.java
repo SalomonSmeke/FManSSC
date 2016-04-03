@@ -1,10 +1,12 @@
 package com.FManSSC.model.ticket;
 
 import com.FManSSC.model.backbones.Time;
+import com.FManSSC.model.backbones._Synopsis;
+import com.FManSSC.model.backbones._Verifiable;
 import com.FManSSC.model.customer.Customer;
 import com.FManSSC.model.room.Room;
 
-public class Ticket implements _Ticket {
+public class Ticket implements _Ticket, _Verifiable, _Synopsis {
 
 	private long id;
 	private boolean idSet = false;
@@ -136,6 +138,18 @@ public class Ticket implements _Ticket {
 	public void setSecondCl(byte secondCl) {
 		this.secondCl = secondCl;
 	}
+	
+	@Override
+	public String synopsis(){
+		if (verify()){
+			String custS = customer.synopsis();
+			String roomS = room.synopsis();
+			return roomS + " :" + custS + " " + dayOp+"/"+monthOp+"/"+yearOp + " Open?: " + open;
+		} else {
+			return "Object Incomplete";
+		}
+	}
+	
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

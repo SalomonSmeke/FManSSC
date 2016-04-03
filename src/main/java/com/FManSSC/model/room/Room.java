@@ -1,8 +1,10 @@
 package com.FManSSC.model.room;
 
+import com.FManSSC.model.backbones._Synopsis;
+import com.FManSSC.model.backbones._Verifiable;
 import com.FManSSC.model.facility.Facility;
 
-public class Room implements _Room {
+public class Room implements _Room, _Verifiable, _Synopsis {
 
 	private long id;
 	private boolean idSet = false;
@@ -72,7 +74,17 @@ public class Room implements _Room {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-
+	
+	@Override
+	public String synopsis(){
+		if (verify()){
+			String facS = facility.synopsis();
+			return "#" + number + " Capacity:" + capacity + " $/hr:" + costPerHr + "Exists?: " + active + " " + facS;
+		} else {
+			return "Object Incomplete";
+		}
+	}
+	
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

@@ -1,10 +1,12 @@
 package com.FManSSC.model.reservation;
 
 import com.FManSSC.model.backbones.Time;
+import com.FManSSC.model.backbones._Synopsis;
+import com.FManSSC.model.backbones._Verifiable;
 import com.FManSSC.model.customer.Customer;
 import com.FManSSC.model.room.Room;
 
-public class Reservation implements _Reservation {
+public class Reservation implements _Reservation, _Verifiable, _Synopsis {
 
 	private long id;
 	private boolean idSet = false;
@@ -142,6 +144,18 @@ public class Reservation implements _Reservation {
 	public void setSecondEn(byte secondEn) {
 		this.secondEn = secondEn;
 	}
+	
+	@Override
+	public String synopsis(){
+		if (verify()){
+			String custS = customer.synopsis();
+			String roomS = room.synopsis();
+			return roomS + " :" + custS + " " + daySt+"/"+monthSt+"/"+yearSt + " Cancelled?: " + cancelled;
+		} else {
+			return "Object Incomplete";
+		}
+	}
+	
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

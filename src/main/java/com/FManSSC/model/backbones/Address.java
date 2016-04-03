@@ -1,6 +1,6 @@
 package com.FManSSC.model.backbones;
 
-public class Address implements _Verifiable{
+public class Address implements _Verifiable, _Synopsis{
 
 	private long id;
 	private boolean idSet = false;
@@ -72,6 +72,15 @@ public class Address implements _Verifiable{
 		this.state = state;
 	}
 
+	public String synopsis(){
+		if (verify()){
+			String streetSyn = street.substring(0, Math.min(street.length(), 10));
+			return (streetSyn + ", #" + streetNo + " " + zip);
+		} else {
+			return "Object Incomplete";
+		}
+	}
+	
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

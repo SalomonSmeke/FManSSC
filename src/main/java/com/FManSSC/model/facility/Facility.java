@@ -2,9 +2,11 @@ package com.FManSSC.model.facility;
 
 import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.backbones.Phone;
+import com.FManSSC.model.backbones._Synopsis;
+import com.FManSSC.model.backbones._Verifiable;
 import com.FManSSC.model.owner.Owner;
 
-public class Facility implements _Facility {
+public class Facility implements _Facility, _Synopsis, _Verifiable {
 
 	private long id;
 	private boolean idSet = false;
@@ -63,6 +65,15 @@ public class Facility implements _Facility {
 	}
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+	
+	@Override
+	public String synopsis(){
+		if (verify()){
+			return (owner.synopsis() + ". Owns:" + body + " " + address.synopsis() + ". Active?: " + active);
+		} else {
+			return "Object Incomplete";
+		}
 	}
 
 	@Override

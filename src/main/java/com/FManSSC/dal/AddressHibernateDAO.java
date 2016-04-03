@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.customer.Customer;
 
-public class CustomerHibernateDAO {
+public class AddressHibernateDAO {
 
 	public void addCustomer(Customer cust) {
 		//TODO: Verify

@@ -1,5 +1,6 @@
 package com.FManSSC.model.facility;
 
+import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.backbones.Phone;
 
 public class Facility implements _Facility {
@@ -9,7 +10,7 @@ public class Facility implements _Facility {
 	private long ownerId;
 	private boolean ownerIdSet = false;
 
-	private long address;
+	private Address address;
 	private boolean addressSet = false;
 
 	private String body;
@@ -32,10 +33,10 @@ public class Facility implements _Facility {
 		this.ownerId = ownerId;
 		ownerIdSet = true;
 	}
-	public long getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(long address) {
+	public void setAddress(Address address) {
 		this.address = address;
 		addressSet = true;
 	}

@@ -1,25 +1,26 @@
 package com.FManSSC.model.customer;
 
+import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.backbones.Person;
 
 public class Customer extends Person implements _Customer {
 
-	private long address;
+	private Address address;
 	private boolean addressSet = false;
 
 	public Customer(){
 		
 	}
 	
-	public Customer(long id, String first, String last, String body, String extension, String email, long address){
+	public Customer(long id, String first, String last, String body, String extension, String email, Address address){
 		super(id, first, last, body, extension, email);
 		this.address = address;
 	}
 	
-	public long getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(long address) {
+	public void setAddress(Address address) {
 		this.address = address;
 		addressSet = true;
 	}

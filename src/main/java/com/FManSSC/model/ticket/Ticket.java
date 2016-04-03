@@ -186,7 +186,7 @@ public class Ticket implements _Ticket, _Verifiable, _Synopsis {
 		if (!tempClosed.verify()) return false;
 		if (!open){
 			int res = tempClosed.compare(tempOpen);
-			if (res == 0 || res == -1) return false;
+			if (res == 0 || res == 1) return false;
 		}
 		return true;
 	}

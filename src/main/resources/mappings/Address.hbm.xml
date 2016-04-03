@@ -4,8 +4,8 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
 
 <hibernate-mapping package="com.FManSSC.model.backbones">
-	<class name="Address" table="custAddress">
-		<id name="id" column="caddress_id"/>
+	<class name="Address" table="address">
+		<id name="id" column="address_id"/>
 		<property name="street" type="string" column="street"/>
 		<property name="streetNo" type="integer" column="streetNo"/>	
 		<property name="city" type="string" column="city"/>

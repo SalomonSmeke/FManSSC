@@ -11,6 +11,6 @@
 		<property name="extension" type="string" column="extension" not-null="true"/>
 		<property name="description" type="string" column="description" not-null="true"/>
 		<property name="active" type="boolean" column="active" not-null="true"/>
-		<one-to-one name="fAddress" class="com.FManSSC.model.facility.FAddress" cascade="save-update, delete"></one-to-one>	
+		<one-to-one name="address" class="com.FManSSC.model.facility.FAddress" cascade="save-update, delete"></one-to-one>	
 	</class>
 </hibernate-mapping>

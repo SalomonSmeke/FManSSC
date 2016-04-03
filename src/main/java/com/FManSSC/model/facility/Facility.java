@@ -11,7 +11,6 @@ public class Facility implements _Facility {
 	private boolean ownerIdSet = false;
 
 	private Address address;
-	private boolean addressSet = false;
 
 	private String body;
 	private String extension;
@@ -38,7 +37,6 @@ public class Facility implements _Facility {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
-		addressSet = true;
 	}
 	public String getBody() {
 		return body;
@@ -72,7 +70,7 @@ public class Facility implements _Facility {
 	public boolean verify(){
 		if (!idSet) return false;
 		if (!ownerIdSet) return false;
-		if (!addressSet) return false;
+		if (!address.verify()) return false;
 		Phone tempPhone = new Phone();
 		tempPhone.setBody(body);
 		tempPhone.setExtension(extension);

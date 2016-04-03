@@ -12,7 +12,7 @@ import Fixtures.Customers;
  * @author Salomon, @date 3/24/16 10:30 PM
  */
 public class DALTest {
-    @Test public void testSomeLibraryMethod() {
+    @Test public void testFixtures() {
     	assertEquals(Customers.cust0.getAddress(), Addresses.add0.getId());
     }
 }

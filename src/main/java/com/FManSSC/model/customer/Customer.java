@@ -6,7 +6,6 @@ import com.FManSSC.model.backbones.Person;
 public class Customer extends Person implements _Customer {
 
 	private Address address;
-	private boolean addressSet = false;
 
 	public Customer(){
 		
@@ -22,13 +21,12 @@ public class Customer extends Person implements _Customer {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
-		addressSet = true;
 	}
 
 	@Override
 	public boolean verify(){
 		if (!super.verify()) return false;
-		if (!addressSet) return false;
+		if (!address.verify()) return false;
 		return true;
 	}
 }

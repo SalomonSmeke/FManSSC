@@ -20,6 +20,19 @@ public class Facility implements _Facility, _Synopsis, _Verifiable {
 
 	private boolean active = true;
 
+	public Facility(){
+		
+	}
+	public Facility(long id, Owner owner, Address address, String body, String extension, String description, Boolean active){
+		this.id = id;
+		this.idSet = true;
+		this.owner = owner;
+		this.address = address;
+		this.body = body;
+		this.extension = extension;
+		this.description = description;
+		this.active = active;
+	}
 	public long getId() {
 		return id;
 	}

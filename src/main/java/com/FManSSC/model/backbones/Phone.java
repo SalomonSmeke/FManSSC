@@ -10,7 +10,12 @@ public class Phone implements _Verifiable {
 	public Phone(){
 		extension = "";
 	}
-
+	
+	public Phone(String body, String extension){
+		this.extension = extension;
+		this.body = body;
+	}
+	
 	public String getBody() {
 		return body;
 	}

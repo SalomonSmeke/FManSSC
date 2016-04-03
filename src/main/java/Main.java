@@ -19,7 +19,15 @@ public class Main extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-		demo(response.getWriter());
+		PrintWriter out = response.getWriter();
+		out.println("Greetings! Initializing AppContext for beans.");
+		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/app-context.xml");
+		out.println("Testing objects with POJOS");
+		demoPOJO(out,"  ");
+		out.println("Testing objects with Beans!");
+		demoBeans(out,"  ",context);
+		out.println("Testing database with Mixed objects");
+		demoDB(out,"  ",context);
 	}
 
 	public static void main(String... args) throws Exception  {
@@ -34,7 +42,8 @@ public class Main extends HttpServlet {
 		server.join();
 	}
 	
-	protected void demo(PrintWriter out){
+	protected void demoPOJO(PrintWriter out, String string){
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/app-context.xml");
 		Customer cust = Customers.cust0;
 		cust.setAddress((Address)context.getBean("addressFixture"));
@@ -46,6 +55,17 @@ public class Main extends HttpServlet {
 		custDAO.deleteCustomer(retrieved);
 		out.println(cust.synopsis());
 		out.println("looks good jim!");
+	}
+	
+	protected void demoBeans(PrintWriter out, String string, ApplicationContext context){
 		
+	}
+	
+	protected void demoDB(PrintWriter out, String string, ApplicationContext context){
+		
+	}
+	
+	protected String objectResult(){
+		return "";
 	}
 }

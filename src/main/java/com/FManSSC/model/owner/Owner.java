@@ -6,6 +6,21 @@ import com.FManSSC.model.backbones._Verifiable;
 
 public class Owner extends Person implements _Owner, _Verifiable, _Synopsis {
 
+	public Owner(){
+		
+	}
+	
+	public Owner(long id, String first, String last, String body, String extension, String email, Boolean active){
+		setId(id);
+		setIdSet(true);
+		setFirst(first);
+		setLast(last);
+		setBody(body);
+		setExtension(extension);
+		setEmail(email);
+		setActive(true);
+	}
+	
 	@Override
 	public String synopsis(){
 		if (verify()){

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.1//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
+
+<hibernate-mapping package="com.FManSSC.model.room">
+	<class name="Room" table="room">
+		<id name="id" column="id"/>
+		<many-to-one name="facility" column="facility" class="com.FManSSC.model.facility.Facility" cascade="save-update, delete" />
+		<property name="capacity" type="int" column="capacity" not-null="true"/>
+		<property name="costPerHr" type="double" column="cph" not-null="true"/>
+		<property name="number" type="string" column="number" not-null="true"/>
+		<property name="location" type="string" column="location" not-null="true"/>
+		<property name="description" type="string" column="description" not-null="true"/>
+		<property name="active" type="boolean" column="active" not-null="true"/>
+	</class>
+</hibernate-mapping>

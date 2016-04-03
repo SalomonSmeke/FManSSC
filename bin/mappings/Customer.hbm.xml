@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.1//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
+ 
+<hibernate-mapping package="com.FManSSC.model.customer">
+	<class name="Customer" table="customer">
+		<id name="id" type="long" column="id"/>
+		<property name="last" type="string" column="lname" not-null="true"/>
+		<property name="first" type="string" column="fname" not-null="true"/>
+		<property name="body" type="string" column="phone" not-null="true"/>
+		<property name="extension" type="string" column="extension" not-null="true"/>
+		<property name="email" type="string" column="email" not-null="true"/>
+		<many-to-one name="address" column="addressid" class="com.FManSSC.model.backbones.Address" cascade="save-update, delete" />
+	</class>
+</hibernate-mapping>

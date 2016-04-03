@@ -5,8 +5,11 @@ import javax.servlet.http.*;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.FManSSC.dal.*;
+import com.FManSSC.model.backbones.Address;
 import com.FManSSC.model.customer.Customer;
 
 import Fixtures.Customers;
@@ -32,7 +35,12 @@ public class Main extends HttpServlet {
 	}
 	
 	protected void demo(PrintWriter out){
+		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/app-context.xml");
+
 		Customer cust = Customers.cust0;
+		
+		cust.setAddress((Address)context.getBean("addressFixture"));
+		
 		boolean v = cust.verify();
 		out.println("Customer Salomon was verified with result: " + v);
 		CustomerHibernateDAO custDAO = new CustomerHibernateDAO();

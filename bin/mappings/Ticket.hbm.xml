@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.1//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
+ 
+<hibernate-mapping package="com.FManSSC.model.ticket">
+	<class name="Ticket" table="ticket">
+		<id name="id" column="id"/>
+		<many-to-one name="room" column="room" class="com.FManSSC.model.room.Room" cascade="save-update, delete"></many-to-one>	
+		<many-to-one name="customer" column="customer" class="com.FManSSC.model.customer.Customer" cascade="save-update, delete"></many-to-one>	
+		<property name="yearOp" type="short" column="yearop" not-null="true"/>
+		<property name="monthOp" type="byte" column="monthop" not-null="true"/>
+		<property name="dayOp" type="byte" column="dayop" not-null="true"/>
+		<property name="hourOp" type="byte" column="hourop" not-null="true"/>
+		<property name="minuteOp" type="byte" column="minuteop" not-null="true"/>
+		<property name="secondOp" type="byte" column="secondop" not-null="true"/>
+
+		<property name="yearCl" type="short" column="yearcl" not-null="true"/>
+		<property name="monthCl" type="byte" column="monthcl" not-null="true"/>
+		<property name="dayCl" type="byte" column="daycl" not-null="true"/>
+		<property name="hourCl" type="byte" column="hourcl" not-null="true"/>
+		<property name="minuteCl" type="byte" column="minutecl" not-null="true"/>
+		<property name="secondCl" type="byte" column="secondcl" not-null="true"/>
+
+		<property name="description" type="string" column="description" not-null="true"/>
+		<property name="open" type="boolean" column="open" not-null="true"/>
+	</class>
+</hibernate-mapping>

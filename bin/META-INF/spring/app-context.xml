@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Wiring the dependencies for the Facility Management System</description>
+
+	<context:component-scan base-package="com.FManSSC" />
+	
+	<bean id="time" class="com.FManSSC.backbones.Time" scope="prototype"/> <!-- empty time -->
+	<bean id="phone" class="com.FManSSC.backbones.Phone" scope="prototype"/> <!-- empty phone -->
+	<bean id="address" class="com.FManSSC.backbones.Address" scope="prototype"/> <!-- empty address -->
+	
+	<bean id="timeFixturePast" class="com.FManSSC.backbones.Time" scope="prototype">
+		<property name="year" value="2010" />
+		<property name="month" value="10" />
+		<property name="day" value="10" />
+		<property name="hour" value="11" />
+		<property name="minute" value="20" />
+		<property name="second" value="30" />
+	</bean>
+	
+	<bean id="phoneFixture" class="com.FManSSC.backbones.Phone" scope="prototype"> <!-- empty phone -->
+		<property name="body" value="1239874321" />
+		<property name="extension" value="666" />
+	</bean>
+
+	<bean id="addressFixture" class="com.FManSSC.backbones.Address" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="streetNo" value="123" />
+		<property name="streetNoSet" value="true" />
+		<property name="street" value="Sample St." />
+		<property name="zip" value="12354" />
+		<property name="city" value="ChillCity" />
+		<property name="state" value="Illinois" />
+	</bean>
+
+<!--
+	<bean id="orderDetail" class="com.online.bookstore.model.order.OrderDetailImpl" scope="prototype">
+		<property name="book" ref="book" />
+	</bean>
+-->
+	<!-- <bean id="customerService" class="com.online.bookstore.model.service.CustomerService" scope="prototype"></bean> -->
+	
+</beans>

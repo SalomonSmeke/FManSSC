@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.1//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
+
+<hibernate-mapping package="com.FManSSC.model.facility">
+	<class name="Facility" table="facility">
+		<id name="id" column="id"/>
+		<many-to-one name="owner" column="owner" class="com.FManSSC.model.owner.Owner" cascade="save-update, delete" />
+		<property name="body" type="string" column="phone" not-null="true"/>
+		<property name="extension" type="string" column="extension" not-null="true"/>
+		<property name="description" type="string" column="description" not-null="true"/>
+		<property name="active" type="boolean" column="active" not-null="true"/>
+		<many-to-one name="address" column="addressid" class="com.FManSSC.model.backbones.Address" cascade="save-update, delete" />
+	</class>
+</hibernate-mapping>

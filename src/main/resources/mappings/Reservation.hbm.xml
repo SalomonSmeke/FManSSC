@@ -5,9 +5,9 @@
  
 <hibernate-mapping package="com.FManSSC.model.reservation">
 	<class name="Reservation" table="reservation">
-		<id name="id" column="id"/>		
-		<many-to-one name="roomId" column="id" class="com.FManSSC.model.room.Room" cascade="save-update, delete"></many-to-one>	
-		<many-to-one name="customerId" column="id" class="com.FManSSC.model.customer.Customer" cascade="save-update, delete"></many-to-one>	
+		<id name="id" column="id"/>
+		<many-to-one name="roomId" column="roomid" class="com.FManSSC.model.room.Room" cascade="save-update, delete"></many-to-one>	
+		<many-to-one name="customerId" column="customerid" class="com.FManSSC.model.customer.Customer" cascade="save-update, delete"></many-to-one>	
 		<property name="yearSt" type="short" column="yearst" not-null="true"/>
 		<property name="monthSt" type="byte" column="monthst" not-null="true"/>
 		<property name="daySt" type="byte" column="dayst" not-null="true"/>

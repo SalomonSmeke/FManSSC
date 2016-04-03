@@ -32,10 +32,10 @@ public class Facility implements _Facility {
 		this.ownerId = ownerId;
 		ownerIdSet = true;
 	}
-	public long getAddressId() {
+	public long getAddress() {
 		return address;
 	}
-	public void setAddressId(long address) {
+	public void setAddress(long address) {
 		this.address = address;
 		addressSet = true;
 	}

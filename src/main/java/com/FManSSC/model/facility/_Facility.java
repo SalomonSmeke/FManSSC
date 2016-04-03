@@ -8,8 +8,8 @@ public interface _Facility extends _Verifiable {
 	public void setId(long id);
 	public long getOwnerId();
 	public void setOwnerId(long ownerId);
-	public long getAddressId();
-	public void setAddressId(long address);
+	public long getAddress();
+	public void setAddress(long address);
 	public String getBody();
 	public void setBody(String body);
 	public String getExtension();

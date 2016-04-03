@@ -16,10 +16,10 @@ public class Customer extends Person implements _Customer {
 		this.address = address;
 	}
 	
-	public long getAddressId() {
+	public long getAddress() {
 		return address;
 	}
-	public void setAddressId(long address) {
+	public void setAddress(long address) {
 		this.address = address;
 		addressSet = true;
 	}

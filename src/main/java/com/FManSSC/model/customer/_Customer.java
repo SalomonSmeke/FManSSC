@@ -2,7 +2,7 @@ package com.FManSSC.model.customer;
 
 public interface _Customer {
 
-	public long getAddressId();
-	public void setAddressId(long address);
+	public long getAddress();
+	public void setAddress(long address);
 
 }

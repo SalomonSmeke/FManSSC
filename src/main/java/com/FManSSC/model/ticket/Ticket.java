@@ -31,6 +31,31 @@ public class Ticket implements _Ticket, _Verifiable, _Synopsis {
 
 	private boolean open = true;
 
+	public Ticket(){
+		
+	}
+	
+	public Ticket(long id, Room room, Customer customer, short yearOp, byte monthOp, byte dayOp, byte hourOp, byte minuteOp, byte secondOp,short yearCl, byte monthCl, byte dayCl, byte hourCl, byte minuteCl, byte secondCl, String description, Boolean open){
+		this.id=id;
+		this.idSet=true;
+		this.room=room;
+		this.customer=customer;
+		this.yearOp=yearOp;
+		this.monthOp=monthOp;
+		this.dayOp=dayOp;
+		this.hourOp=hourOp;
+		this.minuteOp=minuteOp;
+		this.secondOp=secondOp;
+		this.yearCl=yearCl;
+		this.monthCl=monthCl;
+		this.dayCl=dayCl;
+		this.hourCl=hourCl;
+		this.minuteCl=minuteCl;
+		this.secondCl=secondCl;
+		this.description=description;
+		this.open=open;
+	}
+	
 	public long getId() {
 		return id;
 	}

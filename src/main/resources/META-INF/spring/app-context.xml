@@ -72,7 +72,7 @@
 		<property name="first" value="BossMan" />
 		<property name="last" value="FancyPants" />
 		<property name="extension" value="" />
-		<property name="body" ref="1234567898" />
+		<property name="body" value="1234567898" />
 		<property name="email" value="snail@mail.com" />
 		<property name="active" value="true" />
 	</bean>

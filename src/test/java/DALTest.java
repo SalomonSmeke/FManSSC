@@ -13,6 +13,9 @@ import Fixtures.Customers;
  */
 public class DALTest {
     @Test public void testFixtures() {
-    	assertEquals(Customers.cust0.getAddress(), Addresses.add0.getId());
+    	assertEquals(Customers.cust0.getAddress().getId(), Addresses.add0.getId());
+    }
+    @Test public void testSynopsis() {
+    	assertEquals(Customers.cust0.synopsis(),"Smeke, Salomon: 8135023883. Active?: true. Batman Str, #0 60660");
     }
 }

@@ -11,6 +11,6 @@
 		<property name="body" type="string" column="phone" not-null="true"/>
 		<property name="extension" type="string" column="extension" not-null="true"/>
 		<property name="email" type="string" column="email" not-null="true"/>
-		<one-to-one name="address" class="com.FManSSC.model.backbones.Address" cascade="save-update, delete"></one-to-one>	
+		<many-to-one name="address" column="id" class="com.FManSSC.model.backbones.Address" cascade="save-update, delete" />
 	</class>
 </hibernate-mapping>

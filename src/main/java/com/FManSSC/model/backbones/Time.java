@@ -16,7 +16,12 @@ public class Time implements _Verifiable {
 	}
 
 	public Time(short year, byte month, byte day, byte hour, byte minute, byte second){
-
+		this.year=year;
+		this.month=month;
+		this.day=day;
+		this.hour=hour;
+		this.minute=minute;
+		this.second=second;
 	}
 
 	public short getYear() {

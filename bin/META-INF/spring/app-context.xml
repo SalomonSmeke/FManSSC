@@ -12,6 +12,12 @@
 	<bean id="time" class="com.FManSSC.model.backbones.Time" scope="prototype"/> <!-- empty time -->
 	<bean id="phone" class="com.FManSSC.model.backbones.Phone" scope="prototype"/> <!-- empty phone -->
 	<bean id="address" class="com.FManSSC.model.backbones.Address" scope="prototype"/> <!-- empty address -->
+	<bean id="customer" class="com.FManSSC.model.customer.Customer" scope="prototype"/> <!-- empty customer -->
+	<bean id="facility" class="com.FManSSC.model.facility.Facility" scope="prototype"/> <!-- empty facility -->
+	<bean id="owner" class="com.FManSSC.model.owner.Owner" scope="prototype"/> <!-- empty owner -->
+	<bean id="reservation" class="com.FManSSC.model.reservation.Reservation" scope="prototype"/> <!-- empty reservation -->
+	<bean id="room" class="com.FManSSC.model.room.Room" scope="prototype"/> <!-- empty room -->
+	<bean id="ticket" class="com.FManSSC.model.ticket.Ticket" scope="prototype"/> <!-- empty ticket -->
 	
 	<bean id="timeFixturePast" class="com.FManSSC.model.backbones.Time" scope="prototype">
 		<property name="year" value="2010" />
@@ -37,12 +43,104 @@
 		<property name="city" value="ChillCity" />
 		<property name="state" value="Illinois" />
 	</bean>
-
-<!--
-	<bean id="orderDetail" class="com.online.bookstore.model.order.OrderDetailImpl" scope="prototype">
-		<property name="book" ref="book" />
+	
+	<bean id="customerFixture" class="com.FManSSC.model.customer.Customer" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="first" value="SpringBean" />
+		<property name="last" value="Mc. Hibernate" />
+		<property name="body" value="0981234874" />
+		<property name="extension" value="" />
+		<property name="email" value="hi@hi.com" />
+		<property name="address" ref="addressFixture" />
 	</bean>
--->
+
+	<bean id="facilityFixture" class="com.FManSSC.model.facility.Facility" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="owner" ref="ownerFixture" />
+		<property name="body" value="0981234874" />
+		<property name="extension" value="" />
+		<property name="address" ref="addressFixture" />
+		<property name="description" value="We keep secrets here..." />
+		<property name="active" value="true" />
+	</bean>
+	
+	<bean id="ownerFixture" class="com.FManSSC.model.owner.Owner" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="first" value="BossMan" />
+		<property name="last" value="FancyPants" />
+		<property name="extension" value="" />
+		<property name="body" ref="1234567898" />
+		<property name="email" value="snail@mail.com" />
+		<property name="active" value="true" />
+	</bean>
+	
+	<bean id="reservationFixture" class="com.FManSSC.model.reservation.Reservation" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="room" ref="roomFixture" />
+		<property name="customer" ref="customerFixture" />
+		
+		<property name="yearSt" value="2017" />
+		<property name="monthSt" value="10" />
+		<property name="daySt" value="10" />
+		<property name="hourSt" value="11" />
+		<property name="minuteSt" value="20" />
+		<property name="secondSt" value="30" />
+		
+		<property name="yearEn" value="2017" />
+		<property name="monthEn" value="10" />
+		<property name="dayEn" value="10" />
+		<property name="hourEn" value="15" />
+		<property name="minuteEn" value="20" />
+		<property name="secondEn" value="30" />
+		
+		<property name="description" value="Reunion for Trekkies" />
+		
+		<property name="cancelled" value="true" />
+	</bean>
+	
+	<bean id="roomFixture" class="com.FManSSC.model.room.Room" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="facility" ref="facilityFixture" />
+		<property name="capacity" value="20" />
+		<property name="capacitySet" value="true" />
+		<property name="costPerHr" value="200" />
+		<property name="costPerHrSet" value="true" />
+		<property name="number" value="116" />
+		<property name="location" value="West wing" />
+		<property name="description" value="We keep secrets here..." />
+		<property name="active" value="true" />
+	</bean>
+	
+	<bean id="ticketFixture" class="com.FManSSC.model.ticket.Ticket" scope="prototype">
+		<property name="id" value="0" />
+		<property name="idSet" value="true" />
+		<property name="room" ref="roomFixture" />
+		<property name="customer" ref="customerFixture" />
+		
+		<property name="yearOp" value="2017" />
+		<property name="monthOp" value="10" />
+		<property name="dayOp" value="10" />
+		<property name="hourOp" value="11" />
+		<property name="minuteOp" value="20" />
+		<property name="secondOp" value="30" />
+		
+		<property name="yearCl" value="2017" />
+		<property name="monthCl" value="10" />
+		<property name="dayCl" value="10" />
+		<property name="hourCl" value="15" />
+		<property name="minuteCl" value="20" />
+		<property name="secondCl" value="30" />
+		
+		<property name="description" value="Projector broke" />
+		
+		<property name="open" value="true" />
+	</bean>
+
 	<!-- <bean id="customerService" class="com.online.bookstore.model.service.CustomerService" scope="prototype"></bean> -->
 	
 </beans>

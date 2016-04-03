@@ -46,5 +46,6 @@ public class Main extends HttpServlet {
 		custDAO.deleteCustomer(retrieved);
 		out.println(cust.synopsis());
 		out.println("looks good jim!");
+		
 	}
 }

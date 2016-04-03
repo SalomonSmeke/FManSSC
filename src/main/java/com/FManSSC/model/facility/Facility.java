@@ -67,6 +67,12 @@ public class Facility implements _Facility, _Synopsis, _Verifiable {
 		this.active = active;
 	}
 	
+	public boolean isIdSet() {
+		return idSet;
+	}
+	public void setIdSet(boolean idSet) {
+		this.idSet = idSet;
+	}
 	@Override
 	public String synopsis(){
 		if (verify()){

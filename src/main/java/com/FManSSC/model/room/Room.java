@@ -75,6 +75,24 @@ public class Room implements _Room, _Verifiable, _Synopsis {
 		this.active = active;
 	}
 	
+	public boolean isIdSet() {
+		return idSet;
+	}
+	public void setIdSet(boolean idSet) {
+		this.idSet = idSet;
+	}
+	public boolean isCapacitySet() {
+		return capacitySet;
+	}
+	public void setCapacitySet(boolean capacitySet) {
+		this.capacitySet = capacitySet;
+	}
+	public boolean isCostPerHrSet() {
+		return costPerHrSet;
+	}
+	public void setCostPerHrSet(boolean costPerHrSet) {
+		this.costPerHrSet = costPerHrSet;
+	}
 	@Override
 	public String synopsis(){
 		if (verify()){

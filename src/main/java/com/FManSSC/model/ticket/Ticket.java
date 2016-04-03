@@ -66,6 +66,78 @@ public class Ticket implements _Ticket {
 		this.open = open;
 	}
 
+	public short getYearOp() {
+		return yearOp;
+	}
+	public void setYearOp(short yearOp) {
+		this.yearOp = yearOp;
+	}
+	public byte getMonthOp() {
+		return monthOp;
+	}
+	public void setMonthOp(byte monthOp) {
+		this.monthOp = monthOp;
+	}
+	public byte getDayOp() {
+		return dayOp;
+	}
+	public void setDayOp(byte dayOp) {
+		this.dayOp = dayOp;
+	}
+	public byte getHourOp() {
+		return hourOp;
+	}
+	public void setHourOp(byte hourOp) {
+		this.hourOp = hourOp;
+	}
+	public byte getMinuteOp() {
+		return minuteOp;
+	}
+	public void setMinuteOp(byte minuteOp) {
+		this.minuteOp = minuteOp;
+	}
+	public byte getSecondOp() {
+		return secondOp;
+	}
+	public void setSecondOp(byte secondOp) {
+		this.secondOp = secondOp;
+	}
+	public short getYearCl() {
+		return yearCl;
+	}
+	public void setYearCl(short yearCl) {
+		this.yearCl = yearCl;
+	}
+	public byte getMonthCl() {
+		return monthCl;
+	}
+	public void setMonthCl(byte monthCl) {
+		this.monthCl = monthCl;
+	}
+	public byte getDayCl() {
+		return dayCl;
+	}
+	public void setDayCl(byte dayCl) {
+		this.dayCl = dayCl;
+	}
+	public byte getHourCl() {
+		return hourCl;
+	}
+	public void setHourCl(byte hourCl) {
+		this.hourCl = hourCl;
+	}
+	public byte getMinuteCl() {
+		return minuteCl;
+	}
+	public void setMinuteCl(byte minuteCl) {
+		this.minuteCl = minuteCl;
+	}
+	public byte getSecondCl() {
+		return secondCl;
+	}
+	public void setSecondCl(byte secondCl) {
+		this.secondCl = secondCl;
+	}
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

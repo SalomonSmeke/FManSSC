@@ -66,6 +66,84 @@ public class Reservation implements _Reservation {
 		this.cancelled = cancelled;
 	}
 
+	public boolean isIdSet() {
+		return idSet;
+	}
+	public void setIdSet(boolean idSet) {
+		this.idSet = idSet;
+	}
+	public short getYearSt() {
+		return yearSt;
+	}
+	public void setYearSt(short yearSt) {
+		this.yearSt = yearSt;
+	}
+	public byte getMonthSt() {
+		return monthSt;
+	}
+	public void setMonthSt(byte monthSt) {
+		this.monthSt = monthSt;
+	}
+	public byte getDaySt() {
+		return daySt;
+	}
+	public void setDaySt(byte daySt) {
+		this.daySt = daySt;
+	}
+	public byte getHourSt() {
+		return hourSt;
+	}
+	public void setHourSt(byte hourSt) {
+		this.hourSt = hourSt;
+	}
+	public byte getMinuteSt() {
+		return minuteSt;
+	}
+	public void setMinuteSt(byte minuteSt) {
+		this.minuteSt = minuteSt;
+	}
+	public byte getSecondSt() {
+		return secondSt;
+	}
+	public void setSecondSt(byte secondSt) {
+		this.secondSt = secondSt;
+	}
+	public short getYearEn() {
+		return yearEn;
+	}
+	public void setYearEn(short yearEn) {
+		this.yearEn = yearEn;
+	}
+	public byte getMonthEn() {
+		return monthEn;
+	}
+	public void setMonthEn(byte monthEn) {
+		this.monthEn = monthEn;
+	}
+	public byte getDayEn() {
+		return dayEn;
+	}
+	public void setDayEn(byte dayEn) {
+		this.dayEn = dayEn;
+	}
+	public byte getHourEn() {
+		return hourEn;
+	}
+	public void setHourEn(byte hourEn) {
+		this.hourEn = hourEn;
+	}
+	public byte getMinuteEn() {
+		return minuteEn;
+	}
+	public void setMinuteEn(byte minuteEn) {
+		this.minuteEn = minuteEn;
+	}
+	public byte getSecondEn() {
+		return secondEn;
+	}
+	public void setSecondEn(byte secondEn) {
+		this.secondEn = secondEn;
+	}
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;

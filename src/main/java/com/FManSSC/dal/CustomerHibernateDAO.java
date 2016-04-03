@@ -9,7 +9,6 @@ import com.FManSSC.model.customer.Customer;
 public class CustomerHibernateDAO {
 
 	public void addCustomer(Customer cust) {
-		//TODO: Verify
 		System.out.println("*************** Adding customer information in DB with ID ...  " + cust.getId());
 		Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
@@ -18,7 +17,7 @@ public class CustomerHibernateDAO {
 	}
 
 	public void deleteCustomer(Customer cust) {
-		System.out.println("*************** Deleteing customer information in DB with ID ...  " + cust.getId());
+		System.out.println("*************** Deleting customer information in DB with ID ...  " + cust.getId());
 		Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		session.delete(cust);

@@ -8,70 +8,43 @@ import com.FManSSC.model.customer.Customer;
 
 public class AddressHibernateDAO {
 
-	public void addCustomer(Customer cust) {
-		//TODO: Verify
-		System.out.println("*************** Adding customer information in DB with ID ...  " + cust.getId());
+	public void addAddress(Address addr) {
+		System.out.println("*************** Adding address information in DB with ID ...  " + addr.getId());
 		Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		session.save(cust);
+		session.save(addr);
 		session.getTransaction().commit();
 	}
 
-	public void deleteCustomer(Customer cust) {
-		System.out.println("*************** Deleteing customer information in DB with ID ...  " + cust.getId());
+	public void deleteAddress(Address addr) {
+		System.out.println("*************** Deleting address information in DB with ID ...  " + addr.getId());
 		Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		session.delete(cust);
+		session.delete(addr);
 		session.getTransaction().commit();
 	}
 
-	public Customer retrieveCustomer(long i) {
+	public Address retrieveCustomer(long i) {
 		try {
-			System.out.println("*************** Searcing for customer information with ID ...  " + i);
+			System.out.println("*************** Searcing for address information with ID ...  " + i);
 			Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
 			session.beginTransaction();
 
 			//System.out.println("*************** Hibernate session is created ..................\n" + session.toString());
 
-			org.hibernate.Query getCustQuery = session.createQuery("From Customer where id=:id");		
+			org.hibernate.Query getCustQuery = session.createQuery("From Address where id=:id");		
 			getCustQuery.setLong("id", i);
 
 			System.out.println("*************** Retrieve Query is ....>>\n" + getCustQuery.toString()); 
 
-			List<?> customers = getCustQuery.list();
-			System.out.println("Getting Customer Details using HQL. \n" + customers);
-
-			session.getTransaction().commit();
-			return (Customer)customers.get(0);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public Address retrieveCustomerAddress(long id) {
-		try {
-			System.out.println("*************** Searcing for customer address information with ID ...  " + id);
-			Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
-			session.beginTransaction();
-
-			Query getAddressQuery = session.createQuery("From address where address=:id");		
-			getAddressQuery.setLong("id", id);
-
-			System.out.println("*************** Retrieve Query is ....>>\n" + getAddressQuery.toString()); 
-
-			List<?> addresses = getAddressQuery.list();
-			System.out.println("Getting Book Details using HQL. \n" + addresses.get(0));
-
-			System.out.println("*************** Retrieve Query is ....>>\n" + addresses.get(0).toString()); 
+			List<?> addresses = getCustQuery.list();
+			System.out.println("Getting Address Details using HQL. \n" + addresses);
 
 			session.getTransaction().commit();
 			return (Address)addresses.get(0);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-
 }

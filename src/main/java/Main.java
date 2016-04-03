@@ -144,11 +144,14 @@ public class Main extends HttpServlet {
 		cust.setAddress((Address)context.getBean("addressFixture"));
 		boolean v = cust.verify();
 		out.println("Customer Salomon was verified with result: " + v);
+		AddressHibernateDAO addrDAO = new AddressHibernateDAO();
+		addrDAO.addAddress((Address)context.getBean("addressFixture"));
 		CustomerHibernateDAO custDAO = new CustomerHibernateDAO();
 		custDAO.addCustomer(cust);
 		Customer retrieved = custDAO.retrieveCustomer(1);
 		custDAO.deleteCustomer(retrieved);
-		out.println(cust.synopsis());
+		addrDAO.deleteAddress((Address)context.getBean("addressFixture"));
+		out.println('\n' + cust.synopsis());
 		out.println("looks good jim!");
 	}
 	

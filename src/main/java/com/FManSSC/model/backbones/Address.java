@@ -72,6 +72,22 @@ public class Address implements _Verifiable, _Synopsis{
 		this.state = state;
 	}
 
+	public boolean isIdSet() {
+		return idSet;
+	}
+
+	public void setIdSet(boolean idSet) {
+		this.idSet = idSet;
+	}
+
+	public boolean isStreetNoSet() {
+		return streetNoSet;
+	}
+
+	public void setStreetNoSet(boolean streetNoSet) {
+		this.streetNoSet = streetNoSet;
+	}
+
 	public String synopsis(){
 		if (verify()){
 			String streetSyn = street.substring(0, Math.min(street.length(), 10));

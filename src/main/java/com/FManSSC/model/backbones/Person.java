@@ -5,6 +5,14 @@ import com.FManSSC.dataHelpers.Skeletal;
 public abstract class Person implements _Verifiable, _Synopsis {
 
 	private long id;
+	public boolean isIdSet() {
+		return idSet;
+	}
+
+	public void setIdSet(boolean idSet) {
+		this.idSet = idSet;
+	}
+
 	private boolean idSet;
 
 	private String first;

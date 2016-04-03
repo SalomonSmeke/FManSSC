@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.1//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.1.dtd">
+ 
+<hibernate-mapping package="com.FManSSC.model.reservations">
+	<class name="Reservation" table="reservation">
+		<id name="id" column="id"/>
+		<many-to-one name="roomId" class="com.FManSSC.model.room.Room" cascade="save-update, delete"></many-to-one>	
+		<many-to-one name="customerId" class="com.FManSSC.model.customer.Customer" cascade="save-update, delete"></many-to-one>	
+		<property name="yearSt" type="short" column="yearst" not-null="true"/>
+		<property name="monthSt" type="byte" column="monthst" not-null="true"/>
+		<property name="daySt" type="byte" column="dayst" not-null="true"/>
+		<property name="hourSt" type="byte" column="hourst" not-null="true"/>
+		<property name="minuteSt" type="byte" column="minutest" not-null="true"/>
+		<property name="secondSt" type="byte" column="secondst" not-null="true"/>
+
+		<property name="yearEn" type="short" column="yearen" not-null="true"/>
+		<property name="monthEn" type="byte" column="monthen" not-null="true"/>
+		<property name="dayEn" type="byte" column="dayen" not-null="true"/>
+		<property name="hourEn" type="byte" column="houren" not-null="true"/>
+		<property name="minuteEn" type="byte" column="minuteen" not-null="true"/>
+		<property name="secondEn" type="byte" column="seconden" not-null="true"/>
+
+		<property name="description" type="string" column="description" not-null="true"/>
+		<property name="cancelled" type="boolean" column="cancelled" not-null="true"/>
+	</class>
+</hibernate-mapping>

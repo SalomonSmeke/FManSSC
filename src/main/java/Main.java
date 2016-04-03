@@ -21,13 +21,25 @@ public class Main extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		PrintWriter out = response.getWriter();
 		out.println("Greetings! Initializing AppContext for beans.");
+		out.println();
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/app-context.xml");
+		out.println("Success!");
+		out.println();
 		out.println("Testing objects with POJOS");
 		demoPOJO(out,"  ");
+		out.println();
+		out.println("Success!");
+		out.println();
 		out.println("Testing objects with Beans!");
 		demoBeans(out,"  ",context);
+		out.println();
+		out.println("Success!");
+		out.println();
 		out.println("Testing database with Mixed objects");
 		demoDB(out,"  ",context);
+		out.println();
+		out.println("Success!");
+		out.println();
 	}
 
 	public static void main(String... args) throws Exception  {

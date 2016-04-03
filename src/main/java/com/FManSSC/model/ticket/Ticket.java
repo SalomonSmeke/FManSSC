@@ -1,15 +1,15 @@
 package com.FManSSC.model.ticket;
 
 import com.FManSSC.model.backbones.Time;
+import com.FManSSC.model.customer.Customer;
+import com.FManSSC.model.room.Room;
 
 public class Ticket implements _Ticket {
 
 	private long id;
 	private boolean idSet = false;
-	private long roomId;
-	private boolean roomIdSet = false;
-	private long customerId;
-	private boolean customerIdSet = false;
+	private Room room;
+	private Customer customer;
 
 	private short yearOp;
 	private byte monthOp;
@@ -36,19 +36,17 @@ public class Ticket implements _Ticket {
 		this.id = id;
 		idSet = true;
 	}
-	public long getRoomId() {
-		return roomId;
+	public Room getRoom() {
+		return room;
 	}
-	public void setRoomId(long roomId) {
-		this.roomId = roomId;
-		roomIdSet = true;
+	public void setRoom(Room room) {
+		this.room = room;
 	}
-	public long getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
-		customerIdSet = true;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	public String getDescription() {
 		return description;
@@ -141,8 +139,8 @@ public class Ticket implements _Ticket {
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;
-		if (!roomIdSet) return false;
-		if (!customerIdSet) return false;
+		if (!room.verify()) return false;
+		if (!customer.verify()) return false;
 		Time tempOpen = new Time (yearOp,monthOp,dayOp,hourOp,minuteOp,secondOp);
 		if (!tempOpen.verify()) return false;
 		Time tempClosed = new Time (yearCl,monthCl,dayCl,hourCl,minuteCl,secondCl);
@@ -153,4 +151,5 @@ public class Ticket implements _Ticket {
 		}
 		return true;
 	}
+
 }

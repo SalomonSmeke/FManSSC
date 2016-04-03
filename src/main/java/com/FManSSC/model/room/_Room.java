@@ -1,13 +1,14 @@
 package com.FManSSC.model.room;
 
 import com.FManSSC.model.backbones._Verifiable;
+import com.FManSSC.model.facility.Facility;
 
 public interface _Room extends _Verifiable {
 
 	public long getId();
 	public void setId(long id);
-	public long getFacilityId();
-	public void setFacilityId(long facilityId);
+	public Facility getFacility();
+	public void setFacility(Facility facility);
 	public int getCapacity();
 	public void setCapacity(int capacity);
 	public double getCostPerHr();

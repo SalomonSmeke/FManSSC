@@ -1,15 +1,15 @@
 package com.FManSSC.model.reservation;
 
 import com.FManSSC.model.backbones.Time;
+import com.FManSSC.model.customer.Customer;
+import com.FManSSC.model.room.Room;
 
 public class Reservation implements _Reservation {
 
 	private long id;
 	private boolean idSet = false;
-	private long roomId;
-	private boolean roomIdSet = false;
-	private long customerId;
-	private boolean customerIdSet = false;
+	private Room room;
+	private Customer customer;
 
 	private short yearSt;
 	private byte monthSt;
@@ -36,19 +36,17 @@ public class Reservation implements _Reservation {
 		this.id = id;
 		idSet = true;
 	}
-	public long getRoomId() {
-		return roomId;
+	public Room getRoom() {
+		return room;
 	}
-	public void setRoomId(long roomId) {
-		this.roomId = roomId;
-		roomIdSet = true;
+	public void setRoom(Room room) {
+		this.room = room;
 	}
-	public long getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
-		customerIdSet = true;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	public String getDescription() {
 		return description;
@@ -147,8 +145,8 @@ public class Reservation implements _Reservation {
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;
-		if (!roomIdSet) return false;
-		if (!customerIdSet) return false;
+		if (!room.verify()) return false;
+		if (!customer.verify()) return false;
 		Time tempStart = new Time (yearSt,monthSt,daySt,hourSt,minuteSt,secondSt);
 		if (!tempStart.verify()) return false;
 		Time tempEnd = new Time (yearEn,monthEn,dayEn,hourEn,minuteEn,secondEn);

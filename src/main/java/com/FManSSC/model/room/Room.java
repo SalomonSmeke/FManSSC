@@ -1,11 +1,12 @@
 package com.FManSSC.model.room;
 
+import com.FManSSC.model.facility.Facility;
+
 public class Room implements _Room {
 
 	private long id;
 	private boolean idSet = false;
-	private long facilityId;
-	private boolean facilityIdSet = false;
+	private Facility facility;
 	private int capacity;
 	private boolean capacitySet = false;
 	private double costPerHr;
@@ -24,12 +25,11 @@ public class Room implements _Room {
 		this.id = id;
 		idSet = true;
 	}
-	public long getFacilityId() {
-		return facilityId;
+	public Facility getFacility() {
+		return facility;
 	}
-	public void setFacilityId(long facilityId) {
-		this.facilityId = facilityId;
-		facilityIdSet = true;
+	public void setFacility(Facility facility) {
+		this.facility = facility;
 	}
 	public int getCapacity() {
 		return capacity;
@@ -76,7 +76,7 @@ public class Room implements _Room {
 	@Override
 	public boolean verify(){
 		if (!idSet) return false;
-		if (!facilityIdSet) return false;
+		if (!facility.verify()) return false;
 		if (!capacitySet) return false;
 		if (!costPerHrSet) return false;
 		return true;

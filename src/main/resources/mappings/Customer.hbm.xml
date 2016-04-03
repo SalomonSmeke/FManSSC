@@ -5,7 +5,7 @@
  
 <hibernate-mapping package="com.FManSSC.model.customer">
 	<class name="Customer" table="customer">
-		<id name="id" column="id"/>
+		<id name="id" type="long" column="id"/>
 		<property name="last" type="string" column="lname" not-null="true"/>
 		<property name="first" type="string" column="fname" not-null="true"/>
 		<property name="body" type="string" column="phone" not-null="true"/>

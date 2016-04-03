@@ -20,9 +20,6 @@ public class Main extends HttpServlet {
 	}
 
 	public static void main(String... args) throws Exception  {
-		
-		
-		
 		String PORT = System.getenv("PORT");
 		if (PORT==null) PORT = "8080";
 		Server server = new Server(Integer.valueOf(PORT));

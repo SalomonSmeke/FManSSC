@@ -135,7 +135,7 @@ public class Main extends HttpServlet {
 		out.println(objectVerification(PREFIX,(Ticket)context.getBean("ticketFixture")));
 		out.println();
 		out.println(PREFIX + "Bean Time Verification");
-		out.println(objectVerification(PREFIX,(Time)context.getBean("timePastFixture")));
+		out.println(objectVerification(PREFIX,(Time)context.getBean("timeFixturePast")));
 		out.println();
 	}
 	

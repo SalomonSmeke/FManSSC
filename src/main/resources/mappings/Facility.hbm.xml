@@ -6,7 +6,7 @@
 <hibernate-mapping package="com.FManSSC.model.facility">
 	<class name="Facility" table="facility">
 		<id name="id" column="id"/>
-		<many-to-one name="ownerId" column="ownerid" class="com.FManSSC.model.owner.Owner" cascade="save-update, delete" />
+		<many-to-one name="owner" column="owner" class="com.FManSSC.model.owner.Owner" cascade="save-update, delete" />
 		<property name="body" type="string" column="phone" not-null="true"/>
 		<property name="extension" type="string" column="extension" not-null="true"/>
 		<property name="description" type="string" column="description" not-null="true"/>

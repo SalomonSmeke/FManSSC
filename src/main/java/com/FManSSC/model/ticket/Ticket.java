@@ -23,6 +23,14 @@ public class Ticket implements _Ticket, _Verifiable, _Synopsis {
 	private short yearCl;
 	private byte monthCl;
 	private byte dayCl;
+	public boolean isIdSet() {
+		return idSet;
+	}
+
+	public void setIdSet(boolean idSet) {
+		this.idSet = idSet;
+	}
+
 	private byte hourCl;
 	private byte minuteCl;
 	private byte secondCl;
